@@ -1,0 +1,103 @@
+html {
+  height: 100%;
+}
+
+main {
+  box-sizing: border-box;
+  height: auto;
+  padding: 100px 26px;
+}
+
+/* Items */
+
+.items {
+  max-width: 100%;
+}
+
+.item {
+  position: relative;
+
+  display: inline-block;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+
+  width: 400px;
+  height: 700px;
+
+  margin: 20px;
+
+  border-radius: 4%;
+
+  background-color: white;
+
+  box-shadow: 0 4px 6px rgba(26, 65, 101, 0.15);
+
+  vertical-align: top;
+}
+.item:hover {
+  transform: scale(1.1, 1.1);
+
+  box-shadow: 0 10px 10px rgba(12, 37, 59, 0.7);
+}
+
+.item-image {
+  width: 100%;
+  height: 500px;
+
+  object-fit: cover;
+}
+
+.item-bottom {
+  padding: 10px 25px 30px;
+
+  color: black;
+}
+
+.item-name {
+  overflow: hidden;
+
+  font-size: 22px;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+.item-name:hover,
+.item-name:focus {
+  overflow: visible;
+
+  -webkit-animation-duration: 0.75s;
+  animation-duration: 0.75s;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-name: buzz-out-on-hover;
+  animation-name: buzz-out-on-hover;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+
+  text-overflow: clip;
+
+  white-space: normal;
+}
+
+.item-name-link {
+  color: inherit;
+}
+
+.item-name-link:visited {
+  color: #57ba70;
+}
+
+.item-short-description {
+  color: dimgray;
+
+  font-size: 18px;
+}
+
+.item-short-description:hover {
+  font-style: italic;
+}
+

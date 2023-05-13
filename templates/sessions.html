@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<html lang="ru">
+<h1 class="title">
+  Добро пожаловать, {{name}}!
+</h1>
+<h2 class="subtitle">
+  Ознакомьтесь с сеансами
+</h2>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<div class="notification is-danger">
+    {{ messages[0] }}
+</div>
+{% endif %}
+{% endwith %}
+<table width="100%">
+<tr>
+    <th>
+        Фильм
+    </th>
+    <th>
+        Зал
+    </th>
+    <th>
+        Дата
+    </th>
+    <th>
+        Время начала
+    </th>
+    <th>
+        Цена
+    </th>
+</tr>
+    {% for session in sessions %}
+            <tr onclick="window.location.href='{{ url_for('main.booking', session_id=session.Sessions.session_id) }}'; return false">
+                <td>{{session.Movies.name}}</td>
+                <td>{{session.Halls.hall_name}}</td>
+                <td>{{session.Sessions.session_date}}</td>
+                <td>{{session.Sessions.time}}</td>
+                <td>{{session.Sessions.price}}</td>
+            </tr>
+    {% endfor %}
+</table>
+{% endblock %}

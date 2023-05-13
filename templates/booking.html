@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+    {{name}}, проверьте информацию о сеансе и выберите место
+</h1>
+<h2 class="subtitle">
+  Вы бронируете билет на фильм {{session.Movies.name}}; зал: {{session.Halls.hall_name}};
+    дата: {{session.Sessions.session_date}}; время начала: {{session.Sessions.time}}; цена: {{session.Sessions.price}} рублей
+</h2>
+<body>
+<form method="POST" action="/booking">
+<div class="seldiv">
+<label>Выберите ряд: </label><select name="select_row">
+    {% for i in range(1, 11) %}
+    <option>{{ i }}</option>
+    {% endfor %}
+</select>
+</div>
+<div class="seldiv">
+<label>Выберите место: </label><select name="select_seat">
+    {% for i in range(1, 11) %}
+    <option>{{ i }}</option>
+    {% endfor %}
+</select>
+</div>
+    <button class="button">Забронировать</button>
+</form>
+</body>
+{% endblock %}

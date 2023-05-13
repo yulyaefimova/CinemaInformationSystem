@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block content %}
+<html lang="ru">
+<link rel="stylesheet" href="images/index.css">
+<body>
+<h1 class="title">
+  Добро пожаловать, {{name}}!
+</h1>
+<h2 class="subtitle">
+  Ознакомьтесь с афишей кинотеатра
+</h2>
+<main>
+  <ul class="items">
+    <li class="item">
+      <div class="item-top">
+        <img class="item-image" src="images/avatar.jpg" alt="Avatar">
+      </div>
+      <section class="item-bottom">
+        <h3 class="item-name">
+          <a class="item-name-link" target="_blank" rel="noopener">
+            {{movies[0].Movies.name}}
+          </a>
+        </h3>
+        <div class="item-short-description">
+          Жанр: {{movies[0].Genres.genre}}
+          <br>Страна: {{movies[0].Countries.country}}
+          <br>Год выхода: {{movies[0].Movies.release_year}}
+          <br>Продолжительность: {{movies[0].Movies.duration}}
+          <br>Возрастное ограничение: {{movies[0].Movies.age_limit}}+
+        </div>
+      </section>
+    </li>
+    <li class="item">
+      <div class="item-top">
+        <img class="item-image" src="images/scream.jpg" alt="Scream">
+      </div>
+      <section class="item-bottom">
+        <h3 class="item-name">
+          <a class="item-name-link" target="_blank" rel="noopener">
+            {{movies[1].Movies.name}}
+          </a>
+        </h3>
+        <div class="item-short-description">
+          Жанр: {{movies[1].Genres.genre}}
+          <br>Страна: {{movies[1].Countries.country}}
+          <br>Год выхода: {{movies[1].Movies.release_year}}
+          <br>Продолжительность: {{movies[1].Movies.duration}}
+          <br>Возрастное ограничение: {{movies[1].Movies.age_limit}}+
+        </div>
+      </section>
+    </li>
+    <li class="item">
+      <div class="item-top">
+        <img class="item-image" src="images/john.jpg" alt="John">
+      </div>
+      <section class="item-bottom">
+        <h3 class="item-name">
+          <a class="item-name-link" target="_blank" rel="noopener">
+            {{movies[2].Movies.name}}
+          </a>
+        </h3>
+        <div class="item-short-description">
+          Жанр: {{movies[2].Genres.genre}}
+          <br>Страна: {{movies[2].Countries.country}}
+          <br>Год выхода: {{movies[2].Movies.release_year}}
+          <br>Продолжительность: {{movies[2].Movies.duration}}
+          <br>Возрастное ограничение: {{movies[2].Movies.age_limit}}+
+        </div>
+      </section>
+    </li>
+    <li class="item">
+      <div class="item-top">
+        <img class="item-image" src="images/blade.jpg" alt="Blade">
+      </div>
+      <section class="item-bottom">
+        <h3 class="item-name">
+          <a class="item-name-link" target="_blank" rel="noopener">
+            {{movies[3].Movies.name}}
+          </a>
+        </h3>
+        <div class="item-short-description">
+          Жанр: {{movies[3].Genres.genre}}
+          <br>Страна: {{movies[3].Countries.country}}
+          <br>Год выхода: {{movies[3].Movies.release_year}}
+          <br>Продолжительность: {{movies[3].Movies.duration}}
+          <br>Возрастное ограничение: {{movies[3].Movies.age_limit}}+
+        </div>
+      </section>
+    </li>
+  </ul>
+</main>
+</body>
+{% endblock %}

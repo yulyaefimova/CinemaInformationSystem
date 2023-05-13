@@ -1,5 +1,4 @@
 import urllib
-
 from flask import Flask
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
@@ -8,7 +7,7 @@ db = SQLAlchemy()
 
 
 def create_app():
-    app = Flask(__name__)
+    app = Flask(__name__, static_folder='C:\\Users\\User\\Desktop\\CinemaSystem\\templates\\images')
     params = urllib.parse.quote_plus(
         'DRIVER={SQL Server};SERVER=LAPTOP-H107LBJJ;DATABASE=CinemaSystem;Trusted_Connection=yes;')
     app.config['SECRET_KEY'] = '9OLWxND4o83j4K4iuopO'
@@ -33,4 +32,3 @@ def create_app():
     from main import main as main_blueprint
     app.register_blueprint(main_blueprint)
     return app
-
